@@ -26,16 +26,16 @@ import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 
-import org.sikuli.api.ImageTarget;
-import org.sikuli.api.ScreenLocation;
-import org.sikuli.api.DesktopScreenRegion;
-import org.sikuli.api.ScreenRegion;
-import org.sikuli.api.Target;
-import org.sikuli.api.robot.Key;
-import org.sikuli.api.robot.Keyboard;
-import org.sikuli.api.robot.Mouse;
-import org.sikuli.api.robot.desktop.DesktopKeyboard;
-import org.sikuli.api.robot.desktop.DesktopMouse;
+//import org.sikuli.api.ImageTarget;
+//import org.sikuli.api.ScreenLocation;
+//import org.sikuli.api.DesktopScreenRegion;
+//import org.sikuli.api.ScreenRegion;
+//import org.sikuli.api.Target;
+//import org.sikuli.api.robot.Key;
+//import org.sikuli.api.robot.Keyboard;
+//import org.sikuli.api.robot.Mouse;
+//import org.sikuli.api.robot.desktop.DesktopKeyboard;
+//import org.sikuli.api.robot.desktop.DesktopMouse;
 
 /**
  * 
@@ -47,10 +47,10 @@ public class ActionGui {
     /**
      * Definicion de variables
      */
-    static ScreenRegion sr;
-    static ScreenLocation sl;
-    static Target tr;
-    static Mouse mouse;
+//    static ScreenRegion sr;
+//    static ScreenLocation sl;
+//    static Target tr;
+//    static Mouse mouse;
 
     static Robot robot;
     static StringSelection seleccion;
@@ -59,7 +59,7 @@ public class ActionGui {
     static DataFlavor dataflavor;
 
     // STATIC MODIFICT
-    static Keyboard kb;
+//    static Keyboard kb;
     // String ruta = "C:\\Users\\Johan Mora\\workspace\\Sikuli\\Imagenes\\";
 
     public File Obj_Archivo;
@@ -84,15 +84,15 @@ public class ActionGui {
 
     }
 
-    public void pegarGui(String texto) throws Exception {
-        Keyboard kb = new DesktopKeyboard();
-        kb.paste(texto);
-    }
-
-    public void escribirGui(String texto) throws Exception {
-        Keyboard kb = new DesktopKeyboard();
-        kb.type(texto);
-    }
+//    public void pegarGui(String texto) throws Exception {
+//        Keyboard kb = new DesktopKeyboard();
+//        kb.paste(texto);
+//    }
+//
+//    public void escribirGui(String texto) throws Exception {
+//        Keyboard kb = new DesktopKeyboard();
+//        kb.type(texto);
+//    }
 
     public void escribirRobot(CharSequence characters) {
         int length = characters.length();
@@ -702,47 +702,47 @@ public class ActionGui {
      * @param nombreImagen en este para metro ira el nombre de la imagen con su
      * extencion pertinente
      */
-    public void click(String direccion, String nombreImagen) throws Exception {
-        // el for lo que realiza es que busque varias veces la imagen
-        for (int i = 0; i < 5; i++) {
-            // Bloque try para capturar psoible error
-            sr = new DesktopScreenRegion();
-            tr = new ImageTarget(new File(direccion + nombreImagen));
-            // tr = new ImageTarget(new File(ruta + "File.png"));
-            sr.wait(tr, 5000);
-            sr = sr.find(tr);
-            mouse = new DesktopMouse();
-            mouse.click(sr.getCenter());
-            break;
-        }
-    }
+//    public void click(String direccion, String nombreImagen) throws Exception {
+//        // el for lo que realiza es que busque varias veces la imagen
+//        for (int i = 0; i < 5; i++) {
+//            // Bloque try para capturar psoible error
+//            sr = new DesktopScreenRegion();
+//            tr = new ImageTarget(new File(direccion + nombreImagen));
+//            // tr = new ImageTarget(new File(ruta + "File.png"));
+//            sr.wait(tr, 5000);
+//            sr = sr.find(tr);
+//            mouse = new DesktopMouse();
+//            mouse.click(sr.getCenter());
+//            break;
+//        }
+//    }
 
-    public void clickEspera(String direccion, String nombreImagen) throws Exception {
-        // el for lo que realiza es que busque varias veces la imagen
-        try {
-
-            for (int i = 0; i < 20; i++) {
-                // Bloque try para capturar psoible error
-                sr = new DesktopScreenRegion();
-                tr = new ImageTarget(new File(direccion + nombreImagen));
-                // tr = new ImageTarget(new File(ruta + "File.png"));
-                sr.wait(tr, 5000);
-                sr = sr.find(tr);
-                if (sr.equals("") || sr == null) {
-                    System.out.println("Continua");
-                    i = 20;
-                } else {
-                    System.out.println("Cargando...");
-                    mouse = new DesktopMouse();
-                    mouse.click(sr.getCenter());
-                    Thread.sleep(5000);
-                    break;
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("s");
-        }
-    }
+//    public void clickEspera(String direccion, String nombreImagen) throws Exception {
+//        // el for lo que realiza es que busque varias veces la imagen
+//        try {
+//
+//            for (int i = 0; i < 20; i++) {
+//                // Bloque try para capturar psoible error
+//                sr = new DesktopScreenRegion();
+//                tr = new ImageTarget(new File(direccion + nombreImagen));
+//                // tr = new ImageTarget(new File(ruta + "File.png"));
+//                sr.wait(tr, 5000);
+//                sr = sr.find(tr);
+//                if (sr.equals("") || sr == null) {
+//                    System.out.println("Continua");
+//                    i = 20;
+//                } else {
+//                    System.out.println("Cargando...");
+//                    mouse = new DesktopMouse();
+//                    mouse.click(sr.getCenter());
+//                    Thread.sleep(5000);
+//                    break;
+//                }
+//            }
+//        } catch (Exception e) {
+//            System.out.println("s");
+//        }
+//    }
 
     /**
      * Metodo para realizar la funcion de un doble click
@@ -752,18 +752,18 @@ public class ActionGui {
      * @param nombreImagen en este para metro ira el nombre de la imagen con su
      * extencion pertinente
      */
-    public void doubleClick(String direccion, String nombreImagen) throws Exception {
-        for (int i = 0; i < 5; i++) {
-            sr = new DesktopScreenRegion();
-            tr = new ImageTarget(new File(direccion + nombreImagen));
-            // tr = new ImageTarget(new File(ruta + "dobleClick.png"));
-            sr.wait(tr, 5000);
-            sr = sr.find(tr);
-            mouse = new DesktopMouse();
-            mouse.doubleClick(sr.getCenter());
-            break;
-        }
-    }
+//    public void doubleClick(String direccion, String nombreImagen) throws Exception {
+//        for (int i = 0; i < 5; i++) {
+//            sr = new DesktopScreenRegion();
+//            tr = new ImageTarget(new File(direccion + nombreImagen));
+//            // tr = new ImageTarget(new File(ruta + "dobleClick.png"));
+//            sr.wait(tr, 5000);
+//            sr = sr.find(tr);
+//            mouse = new DesktopMouse();
+//            mouse.doubleClick(sr.getCenter());
+//            break;
+//        }
+//    }
 
     /**
      * Metodo para encontrar una imagen pero sin realizar ninguna otra accion
@@ -774,24 +774,24 @@ public class ActionGui {
      * extencion pertinente
      * @return
      */
-    public boolean find(String direccion, String nombreImagen) throws Exception {
-        boolean estado = false;
-        for (int i = 0; i < 5; i++) {
-            sr = new DesktopScreenRegion();
-
-            tr = new ImageTarget(new File(direccion + nombreImagen));
-            // tr = new ImageTarget(new File(ruta + "Encontrar.png"));
-            sr.wait(tr, 5000);
-            sr = sr.find(tr);
-            mouse = new DesktopMouse();
-            mouse.move(sr.getCenter());
-            System.out.println("imagen encontrada");
-            estado = true;
-            break;
-
-        }
-        return estado;
-    }
+//    public boolean find(String direccion, String nombreImagen) throws Exception {
+//        boolean estado = false;
+//        for (int i = 0; i < 5; i++) {
+//            sr = new DesktopScreenRegion();
+//
+//            tr = new ImageTarget(new File(direccion + nombreImagen));
+//            // tr = new ImageTarget(new File(ruta + "Encontrar.png"));
+//            sr.wait(tr, 5000);
+//            sr = sr.find(tr);
+//            mouse = new DesktopMouse();
+//            mouse.move(sr.getCenter());
+//            System.out.println("imagen encontrada");
+//            estado = true;
+//            break;
+//
+//        }
+//        return estado;
+//    }
 
     /**
      * Metodo que permite realizar un click referente a una imagen como pocision
@@ -805,18 +805,18 @@ public class ActionGui {
      * @param x cantidad que desea desplazar el mouse en la posicion x
      * @param y cantidad que desea desplazar el mouse en la posicion y
      */
-    public void clickEspecial(String direccion, String nombreImagen, int x, int y) throws Exception {
-        for (int i = 0; i < 10; i++) {
-            sr = new DesktopScreenRegion();
-            tr = new ImageTarget(new File(direccion + nombreImagen));
-            // tr = new ImageTarget(new File(ruta + "MoverMouse.png"));
-            sr.wait(tr, 5000);
-            sr = sr.find(tr);
-            mouse = new DesktopMouse();
-            mouse.click(sr.getCenter().getRelativeScreenLocation(x, y));
-            break;
-        }
-    }
+//    public void clickEspecial(String direccion, String nombreImagen, int x, int y) throws Exception {
+//        for (int i = 0; i < 10; i++) {
+//            sr = new DesktopScreenRegion();
+//            tr = new ImageTarget(new File(direccion + nombreImagen));
+//            // tr = new ImageTarget(new File(ruta + "MoverMouse.png"));
+//            sr.wait(tr, 5000);
+//            sr = sr.find(tr);
+//            mouse = new DesktopMouse();
+//            mouse.click(sr.getCenter().getRelativeScreenLocation(x, y));
+//            break;
+//        }
+//    }
 
     /**
      * Metodo que permite realizar un dobleclick referente a una imagen como
@@ -830,59 +830,59 @@ public class ActionGui {
      * @param x cantidad que desea desplazar el mouse en la posicion x
      * @param y cantidad que desea desplazar el mouse en la posicion y
      */
-    public void doubleClickEspecial(String direccion, String nombreImagen, int x, int y) throws Exception {
-        for (int i = 0; i < 10; i++) {
-            sr = new DesktopScreenRegion();
-            tr = new ImageTarget(new File(direccion + nombreImagen));
-            // tr = new ImageTarget(new File(ruta + "clickEspecial2.png"));
-            sr.wait(tr, 5000);
-            sr = sr.find(tr);
-            mouse = new DesktopMouse();
-            mouse.doubleClick(sr.getCenter().getRelativeScreenLocation(x, y));
-            break;
-        }
-
-    }
-
-    /**
-     * Metodo que permite dar un click pero con el robot ya que con Sikuli
-     * algunas veces toca referenciarlo asi para que funcione
-     *
-     * @param direccion en este parametro ira la direccion donde va a guardar
-     * las imagnes
-     * @param nombreImagen en este para metro ira el nombre de la imagen con su
-     * extencion pertinente
-     */
-    public void clickWithRobot(String direccion, String nombreImagen) throws Exception {
-
-        for (int i = 0; i < 10; i++) {
-            robot = new Robot();
-            sr = new DesktopScreenRegion();
-            tr = new ImageTarget(new File(direccion + nombreImagen));
-            // tr = new ImageTarget(new File(ruta + "clickConRobot.png"));
-            sr.wait(tr, 5000);
-            sr = sr.find(tr);
-            robot.mouseMove(sr.getCenter().getX(), sr.getCenter().getY());
-            robot.mousePress(InputEvent.BUTTON1_MASK);
-            robot.mouseRelease(InputEvent.BUTTON1_MASK);
-            break;
-        }
-    }
-
-    /**
-     * Metodo que permite colocar en un campo tipo input lo que desea escribir
-     *
-     * @param valor en este parametro debe ir lo que quiere escribir
-     */
-    public void spell(String valor) throws Exception {
-        for (int i = 0; i < 5; i++) {
-            Keyboard kb = new DesktopKeyboard();
-            kb.paste(validateNull(valor));
-            // }
-            break;
-        }
-
-    }
+//    public void doubleClickEspecial(String direccion, String nombreImagen, int x, int y) throws Exception {
+//        for (int i = 0; i < 10; i++) {
+//            sr = new DesktopScreenRegion();
+//            tr = new ImageTarget(new File(direccion + nombreImagen));
+//            // tr = new ImageTarget(new File(ruta + "clickEspecial2.png"));
+//            sr.wait(tr, 5000);
+//            sr = sr.find(tr);
+//            mouse = new DesktopMouse();
+//            mouse.doubleClick(sr.getCenter().getRelativeScreenLocation(x, y));
+//            break;
+//        }
+//
+//    }
+//
+//    /**
+//     * Metodo que permite dar un click pero con el robot ya que con Sikuli
+//     * algunas veces toca referenciarlo asi para que funcione
+//     *
+//     * @param direccion en este parametro ira la direccion donde va a guardar
+//     * las imagnes
+//     * @param nombreImagen en este para metro ira el nombre de la imagen con su
+//     * extencion pertinente
+//     */
+//    public void clickWithRobot(String direccion, String nombreImagen) throws Exception {
+//
+//        for (int i = 0; i < 10; i++) {
+//            robot = new Robot();
+//            sr = new DesktopScreenRegion();
+//            tr = new ImageTarget(new File(direccion + nombreImagen));
+//            // tr = new ImageTarget(new File(ruta + "clickConRobot.png"));
+//            sr.wait(tr, 5000);
+//            sr = sr.find(tr);
+//            robot.mouseMove(sr.getCenter().getX(), sr.getCenter().getY());
+//            robot.mousePress(InputEvent.BUTTON1_MASK);
+//            robot.mouseRelease(InputEvent.BUTTON1_MASK);
+//            break;
+//        }
+//    }
+//
+//    /**
+//     * Metodo que permite colocar en un campo tipo input lo que desea escribir
+//     *
+//     * @param valor en este parametro debe ir lo que quiere escribir
+//     */
+//    public void spell(String valor) throws Exception {
+//        for (int i = 0; i < 5; i++) {
+//            Keyboard kb = new DesktopKeyboard();
+//            kb.paste(validateNull(valor));
+//            // }
+//            break;
+//        }
+//
+//    }
 
     /**
      * Metodo que permite validar que el elemento envido tenga algun valor
@@ -930,68 +930,68 @@ public class ActionGui {
      * @param antiguo caracter que se desea reemplazar
      * @param nuevo caracter a introducir en la cadena
      */
-    public void spellRobotEspecial(String valor, String antiguo, String nuevo) throws Exception {
-        robot = new Robot();
-        Keyboard kb = new DesktopKeyboard();
-        int tam = validateNull(valor).replaceAll(antiguo, nuevo).length();
-        if (tam > 0) {
-            String[] array = valor.toString().replaceAll(antiguo, nuevo).split("");
-            for (int i = 0; i < tam; i++) {
-                switch (array[i]) {
-                    case "prueba1":
-                        robot.keyPress(KeyEvent.VK_DEAD_ACUTE);
-                        robot.keyPress(KeyEvent.VK_A);
-
-                        robot.keyRelease(KeyEvent.VK_A);
-                        robot.keyRelease(KeyEvent.VK_DEAD_ACUTE);
-                        break;
-                    case "prueba2":
-                        robot.keyPress(KeyEvent.VK_DEAD_ACUTE);
-                        robot.keyPress(KeyEvent.VK_E);
-
-                        robot.keyRelease(KeyEvent.VK_E);
-                        robot.keyRelease(KeyEvent.VK_DEAD_ACUTE);
-                        break;
-                    case "prueba3":
-
-                        robot.keyPress(KeyEvent.VK_DEAD_ACUTE);
-                        robot.keyPress(KeyEvent.VK_I);
-
-                        robot.keyRelease(KeyEvent.VK_I);
-                        robot.keyRelease(KeyEvent.VK_DEAD_ACUTE);
-                        break;
-                    case "prueba4":
-
-                        robot.keyPress(KeyEvent.VK_DEAD_ACUTE);
-                        robot.keyPress(KeyEvent.VK_O);
-
-                        robot.keyRelease(KeyEvent.VK_O);
-                        robot.keyRelease(KeyEvent.VK_DEAD_ACUTE);
-                        break;
-                    case "prueba5":
-                        robot.keyPress(KeyEvent.VK_DEAD_ACUTE);
-                        robot.keyPress(KeyEvent.VK_U);
-
-                        robot.keyRelease(KeyEvent.VK_U);
-                        robot.keyRelease(KeyEvent.VK_DEAD_ACUTE);
-                        break;
-                    default:
-                        kb.type(array[i]);
-                }
-                // esperarSegundos(1);
-            }
-        }
-    }
-
-    /**
-     * Metodo que va a inserta en un campo un valor copiado anteriormente
-     *
-     * @param valor
-     */
-    public void paste(String valor) throws Exception {
-        Keyboard kb = new DesktopKeyboard();
-        kb.paste(validateNull(valor));
-    }
+//    public void spellRobotEspecial(String valor, String antiguo, String nuevo) throws Exception {
+//        robot = new Robot();
+//        Keyboard kb = new DesktopKeyboard();
+//        int tam = validateNull(valor).replaceAll(antiguo, nuevo).length();
+//        if (tam > 0) {
+//            String[] array = valor.toString().replaceAll(antiguo, nuevo).split("");
+//            for (int i = 0; i < tam; i++) {
+//                switch (array[i]) {
+//                    case "prueba1":
+//                        robot.keyPress(KeyEvent.VK_DEAD_ACUTE);
+//                        robot.keyPress(KeyEvent.VK_A);
+//
+//                        robot.keyRelease(KeyEvent.VK_A);
+//                        robot.keyRelease(KeyEvent.VK_DEAD_ACUTE);
+//                        break;
+//                    case "prueba2":
+//                        robot.keyPress(KeyEvent.VK_DEAD_ACUTE);
+//                        robot.keyPress(KeyEvent.VK_E);
+//
+//                        robot.keyRelease(KeyEvent.VK_E);
+//                        robot.keyRelease(KeyEvent.VK_DEAD_ACUTE);
+//                        break;
+//                    case "prueba3":
+//
+//                        robot.keyPress(KeyEvent.VK_DEAD_ACUTE);
+//                        robot.keyPress(KeyEvent.VK_I);
+//
+//                        robot.keyRelease(KeyEvent.VK_I);
+//                        robot.keyRelease(KeyEvent.VK_DEAD_ACUTE);
+//                        break;
+//                    case "prueba4":
+//
+//                        robot.keyPress(KeyEvent.VK_DEAD_ACUTE);
+//                        robot.keyPress(KeyEvent.VK_O);
+//
+//                        robot.keyRelease(KeyEvent.VK_O);
+//                        robot.keyRelease(KeyEvent.VK_DEAD_ACUTE);
+//                        break;
+//                    case "prueba5":
+//                        robot.keyPress(KeyEvent.VK_DEAD_ACUTE);
+//                        robot.keyPress(KeyEvent.VK_U);
+//
+//                        robot.keyRelease(KeyEvent.VK_U);
+//                        robot.keyRelease(KeyEvent.VK_DEAD_ACUTE);
+//                        break;
+//                    default:
+//                        kb.type(array[i]);
+//                }
+//                // esperarSegundos(1);
+//            }
+//        }
+//    }
+//
+//    /**
+//     * Metodo que va a inserta en un campo un valor copiado anteriormente
+//     *
+//     * @param valor
+//     */
+//    public void paste(String valor) throws Exception {
+//        Keyboard kb = new DesktopKeyboard();
+//        kb.paste(validateNull(valor));
+//    }
 
     /**
      * Metodo que funciona para esperar para que cargue mejor el codigo
@@ -1009,13 +1009,13 @@ public class ActionGui {
      * @param Pulsar entero que se utiliza para borrar una cantidad de
      * caracteres
      */
-    public void cleanSikuli(int Pulsar) throws Exception {
-        Keyboard kb = new DesktopKeyboard();
-
-        for (int i = 1; i <= Pulsar; i++) {
-            kb.type(Key.BACKSPACE);
-        }
-    }
+//    public void cleanSikuli(int Pulsar) throws Exception {
+//        Keyboard kb = new DesktopKeyboard();
+//
+//        for (int i = 1; i <= Pulsar; i++) {
+//            kb.type(Key.BACKSPACE);
+//        }
+//    }
 
     /**
      * Metodo para realzar una copia a una cantidad de caracteres seleccionados
@@ -1054,22 +1054,22 @@ public class ActionGui {
      * @param nombreImagen en este para metro ira el nombre de la imagen con su
      * extencion pertinente
      */
-    public void clickRight(String direccion, String nombreImagen) throws Exception {
-        // el for lo que realiza es que busque varias veces la imagen
-        for (int i = 0; i < 5; i++) {
-            // Bloque try para capturar psoible error
-
-            sr = new DesktopScreenRegion();
-            tr = new ImageTarget(new File(direccion + nombreImagen));
-            // tr = new ImageTarget(new File(ruta + "File.png"));
-            sr.wait(tr, 5000);
-            sr = sr.find(tr);
-            mouse = new DesktopMouse();
-            mouse.rightClick(sr.getCenter());
-            break;
-        }
-
-    }
+//    public void clickRight(String direccion, String nombreImagen) throws Exception {
+//        // el for lo que realiza es que busque varias veces la imagen
+//        for (int i = 0; i < 5; i++) {
+//            // Bloque try para capturar psoible error
+//
+//            sr = new DesktopScreenRegion();
+//            tr = new ImageTarget(new File(direccion + nombreImagen));
+//            // tr = new ImageTarget(new File(ruta + "File.png"));
+//            sr.wait(tr, 5000);
+//            sr = sr.find(tr);
+//            mouse = new DesktopMouse();
+//            mouse.rightClick(sr.getCenter());
+//            break;
+//        }
+//
+//    }
 
     /**
      * Metodo que captura una imagen y la guarda en una carpeta correspondiente

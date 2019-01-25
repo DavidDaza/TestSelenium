@@ -34,7 +34,7 @@ public class LoginPage extends BasePage {
         //click(By.className(loginButtonClass));
         // Instacia Sikuli
         ActionGui as = new ActionGui();
-        as.click(System.getProperty("user.dir"), "\\sikuli\\ingresar.png");
+//        as.click(System.getProperty("user.dir"), "\\sikuli\\ingresar.png");
         // Prueba de Escritorio
 //        ActionDesktop ad = new ActionDesktop();
 //        ad.iniciarApp("C:\\windows\\system32\\calc.exe", System.getProperty("user.dir") + "\\Winium.Desktop.Driver.exe");

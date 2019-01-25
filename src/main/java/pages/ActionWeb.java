@@ -29,7 +29,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.sikuli.api.robot.Key;
+//import org.sikuli.api.robot.Key;
 
 /**
  * 
@@ -871,15 +871,15 @@ public class ActionWeb {
      * ***************************************************************************
      * @param ParametroString1 Valor del elemento
      */
-    public void RightClick(String ParametroString1) throws Exception {
-        WebElement elemento = Driver.findElement(By.className(ParametroString1));
-        Actions acccion = new Actions(Driver);
-        acccion.keyDown(elemento, Key.ENTER);
-        acccion.keyUp(elemento, Key.ENTER);
-//        new Actions(Driver).keyDown(Key.ENTER).perform();
-//        new Actions(Driver).keyUp(ParametroString1).perform();
-
-    }
+//    public void RightClick(String ParametroString1) throws Exception {
+//        WebElement elemento = Driver.findElement(By.className(ParametroString1));
+//        Actions acccion = new Actions(Driver);
+//        acccion.keyDown(elemento, Key.ENTER);
+//        acccion.keyUp(elemento, Key.ENTER);
+////        new Actions(Driver).keyDown(Key.ENTER).perform();
+////        new Actions(Driver).keyUp(ParametroString1).perform();
+//
+//    }
 
     /**
      * ***************************************************************************

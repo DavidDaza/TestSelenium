@@ -70,11 +70,6 @@
             <version>3.17-beta1</version>
         </dependency>
         <dependency>
-            <groupId>sikuli-api.standalone</groupId>
-            <artifactId>sikuli-standalone</artifactId>
-            <version>1.0.3-Pre-1</version>
-        </dependency>
-        <dependency>
             <groupId>com.github.2gis.winium</groupId>
             <artifactId>winium-elements-desktop</artifactId>
             <version>0.2.0-1</version>
@@ -97,6 +92,12 @@
             <artifactId>extentreports</artifactId>
             <version>3.1.5</version>
         </dependency>
+<!--        <dependency>
+            <groupId>sikuli-api.standalone</groupId>
+            <artifactId>sikuli-standalone</artifactId>
+            <version>1.0.3-Pre-1</version>
+            <type>jar</type>
+        </dependency>-->
     </dependencies>
     
     <build>
